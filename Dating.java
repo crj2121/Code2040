@@ -17,21 +17,17 @@ public class Dating
 		String token = "{\"token\":\"4ddf6e752cd8b60989a2db2d87b0438e\"}";
 		JSONObject dictionary = new JSONObject(); 
 		dictionary = getToken(endpoint1, token);
-		System.out.println(dictionary); 
 		int seconds = dictionary.getInt("interval");
 		String date = dictionary.getString("datestamp");
-		System.out.println(date);
 		DateTime new_date = DateTime.parse(date);
 		new_date = new_date.plusSeconds(seconds);
 		String stamp = Instant.parse(new_date.toString()).toString();
 		
-		System.out.println(stamp);
 		
 		
 		String token2 = "{\"token\":\"4ddf6e752cd8b60989a2db2d87b0438e\"";
 		String giveBack = "\"datestamp\":" + "\"" + stamp + "\"}";
 		String combine = token2 + " , " + giveBack;
-		System.out.println(combine);
 	    URL endpoint2 = new URL("http://challenge.code2040.org/api/dating/validate");
 	 	sendBack(endpoint2, combine); 
 	}
