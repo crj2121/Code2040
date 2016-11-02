@@ -12,7 +12,7 @@ public class Registration
 
 
 		connect.setRequestMethod("POST");
-		connect.setRequestProperty("Content-Type" , "application/json");
+		//connect.setRequestProperty("Content-Type" , "application/json");
 
 		OutputStreamWriter output = new OutputStreamWriter(connect.getOutputStream());
 		output.write(string);

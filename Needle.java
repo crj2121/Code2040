@@ -1,8 +1,7 @@
-import java.lang.*;
-
 import java.io.*;
 import java.net.*;
 import org.json.*;
+
 public class Needle
 {
 	public static void main(String[] args) throws Exception 
@@ -56,7 +55,6 @@ public class Needle
 
 		String result = str.toString(); 
 		JSONObject object = new JSONObject(result); 
-		//object = getJsonObject(result);
 
 		return object; 
 	}

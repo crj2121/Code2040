@@ -1,8 +1,8 @@
-//import java.lang.*;
+
 import java.io.*;
 import java.net.*;
 import org.json.*;
-//import java.util.*;
+
 
 public class Prefix
 {
@@ -12,7 +12,6 @@ public class Prefix
 		String token = "{\"token\":\"4ddf6e752cd8b60989a2db2d87b0438e\"}";
 		JSONObject dictionary = new JSONObject(); 
 		dictionary = getToken(endpoint1, token);
-		System.out.println(dictionary);
 		JSONArray hay = dictionary.getJSONArray("array");
 		String pref = dictionary.getString("prefix");
 		JSONArray changed = new JSONArray();  
@@ -23,12 +22,11 @@ public class Prefix
 				changed.put(hay.getString(i));
 			}
 		}
-		//dictionary.put("token","4ddf6e752cd8b60989a2db2d87b0438"); 
+		
 		
 		String token2 = "{\"token\":\"4ddf6e752cd8b60989a2db2d87b0438e\"";
 		String giveBack = "\"array\":" + changed + "}";
 		String combined =  token2 + " , " + giveBack;
-		System.out.println(combined);
 		URL endpoint2 = new URL("http://challenge.code2040.org/api/prefix/validate");
 		sendBack(endpoint2, combined);
 	}
@@ -60,7 +58,7 @@ public class Prefix
 
 		String result = str.toString(); 
 		JSONObject object = new JSONObject(result); 
-		//object = getJsonObject(result);
+		
 
 		return object; 
 	}
